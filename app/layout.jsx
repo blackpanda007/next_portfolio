@@ -1,22 +1,10 @@
-import { Inter, Roboto_Mono, VT323 } from "next/font/google";
 import "./globals.css";
 
 //components
 import Header from "@/components/header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
-
-const inter = Inter({ subsets: ["latin"] });
-
-const vt = VT323({
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const roboto_mono = Roboto_Mono({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
+import { inter, caveat, vt, roboto_mono } from "@/components/fonts";
 
 export const metadata = {
   title: "Satyam's Portfolio",
@@ -26,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${roboto_mono.variable} antialiased`}>
+      <body>
         <Header />
         <StairTransition />
         <PageTransition>

@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 //components
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
+import { inter, caveat, vt, roboto_mono } from "@/components/fonts";
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* logo here */}
         <Link href="/">
-          <h1 className="text-4xl font-medium text-[#313B2F]">
+          <h1 className={`${vt.className} text-4xl font-medium text-[#313B2F]`}>
             Satyam<span className="text-green-300">.</span>
           </h1>
         </Link>

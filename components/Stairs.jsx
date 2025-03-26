@@ -1,11 +1,13 @@
 import { animate, motion } from "framer-motion";
 
 const stairAnimation = {
-  intial: {
+  initial: {
     top: "0%",
+    // Orange color when going up
   },
   animate: {
     top: "100%",
+    backgroundColor: "#313B2F",
   },
   exit: {
     top: ["100%", "0%"],
@@ -39,7 +41,7 @@ const Stairs = () => {
               ease: "easeInOut",
               delay: reverseIndex(index) * 0.1,
             }}
-            className="h-screen w-screen bg-white relative"
+            className="h-screen w-screen bg-[#FBA002] relative"
           />
         );
       })}
