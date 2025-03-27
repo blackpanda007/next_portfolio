@@ -5,6 +5,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTransitionRouter } from "next-view-transitions";
 
 const links = [
   {
@@ -30,6 +31,7 @@ const links = [
 ];
 
 const Nav = () => {
+  const router = useTransitionRouter();
   const pathname = usePathname();
   console.log(pathname);
   return (
@@ -38,6 +40,12 @@ const Nav = () => {
         return (
           <Link
             href={link.path}
+            onClick={(e) => {
+              e.preventDefault();
+              router.push(link.path, {
+                onTransitionReady: pageAnimation,
+              });
+            }}
             key={index}
             className={`${
               link.path === pathname &&
@@ -49,6 +57,47 @@ const Nav = () => {
         );
       })}
     </nav>
+  );
+};
+
+const pageAnimation = () => {
+  document.documentElement.animate(
+    [
+      {
+        opacity: 1,
+        scale: 1,
+        transform: "translateY(0)",
+      },
+      {
+        opacity: 0.5,
+        scale: 0.9,
+        transform: "translateY(-100px)",
+      },
+    ],
+    {
+      duration: 2000,
+      easing: "cubic-bezier(0.76, 0, 0.24, 1)",
+      fill: "forwards",
+      pseudoElement: "::view-transiition-old(root)",
+    }
+  );
+
+  document.documentElement.animate(
+    [
+      {
+        transform: "translateY(100%)",
+      },
+      {
+        transform: "translateY(0)",
+      },
+    ],
+    {
+      duration: 1000,
+      background: "#000000",
+      easing: "cubic-bezier(0.76, 0, 0.24, 1)",
+      fill: "forwards",
+      pseudoElement: "::view-transiition-new(root)",
+    }
   );
 };
 

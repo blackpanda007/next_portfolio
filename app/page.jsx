@@ -18,7 +18,7 @@ const Home = () => {
               Hello I'm <br />
               <span className="text-accent-hover">Satyam Kumar</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="max-w-[500px] mb-9 text-black">
               I excel in Data driven insights and I am a React developer too
               being proficient in various programming languges and frameworks.
             </p>
@@ -27,7 +27,7 @@ const Home = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="uppercase flex items-center gap-2"
+                className="uppercase flex items-center gap-2 text-white"
               >
                 <span>Download CV</span>
                 <FiDownload className="text-xl" />

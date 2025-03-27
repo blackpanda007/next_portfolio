@@ -116,10 +116,10 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/100;
   }
   body {
-    @apply bg-[#313B2F] text-foreground text-white leading-loose;
+    @apply bg-black text-foreground text-white;
   }
   .h1 {
     @apply text-[48px] lg:text-[80px] leading-[1.1] font-semibold;
@@ -130,4 +130,29 @@
   .h3 {
     @apply text-[20px] lg:text-[24px] leading-[1.1] font-semibold;
   }
+}
+
+@utility container {
+  padding: "15px";
+  center: true;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: transform, opacity, scale;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+  animation: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: none !important;
 }

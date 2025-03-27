@@ -21,6 +21,7 @@
     "git": "^0.1.5",
     "lucide-react": "^0.483.0",
     "next": "15.2.3",
+    "next-view-transitions": "^0.3.4",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
