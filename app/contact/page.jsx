@@ -1,7 +1,13 @@
-import React from "react";
+import PageWrapper from "@/components/PageWrapper";
 
 const Contact = () => {
-  return <div>contact page</div>;
+  return (
+    <PageWrapper>
+      <div className="container mx-auto">
+        <div>contact page</div>
+      </div>
+    </PageWrapper>
+  );
 };
 
 export default Contact;

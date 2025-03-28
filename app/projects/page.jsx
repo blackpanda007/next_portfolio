@@ -1,5 +1,13 @@
+import PageWrapper from "@/components/PageWrapper";
+
 const projects = () => {
-  return <div>projects page</div>;
+  return (
+    <PageWrapper>
+      <div className="container mx-auto">
+        <div>projects page</div>
+      </div>
+    </PageWrapper>
+  );
 };
 
 export default projects;

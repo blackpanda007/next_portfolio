@@ -33,7 +33,6 @@ const links = [
 const Nav = () => {
   const router = useTransitionRouter();
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <nav className="flex gap-8">
       {links.map((link, index) => {
@@ -49,8 +48,8 @@ const Nav = () => {
             key={index}
             className={`${
               link.path === pathname &&
-              "text-[#313B2F] border-b-2 border-[#313B2F]"
-            } capitalize font-medium hover:text-[#313B2F] transition-all`}
+              "text-[#42a32f] border-b-2 border-[#313B2F]"
+            } capitalize font-medium hover:text-[#70a765] transition-all`}
           >
             {link.name}
           </Link>
@@ -75,10 +74,10 @@ const pageAnimation = () => {
       },
     ],
     {
-      duration: 2000,
+      duration: 1000,
       easing: "cubic-bezier(0.76, 0, 0.24, 1)",
       fill: "forwards",
-      pseudoElement: "::view-transiition-old(root)",
+      pseudoElement: "::view-transition-old(root)",
     }
   );
 
@@ -96,7 +95,7 @@ const pageAnimation = () => {
       background: "#000000",
       easing: "cubic-bezier(0.76, 0, 0.24, 1)",
       fill: "forwards",
-      pseudoElement: "::view-transiition-new(root)",
+      pseudoElement: "::view-transition-new(root)",
     }
   );
 };

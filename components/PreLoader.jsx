@@ -1,17 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { caveat } from "@/components/fonts";
+import { caveat, jetbrains } from "@/components/fonts";
 
 const words = [
   "Hello",
-  "नमस्ते",
+  "नमस्ते", //hindi
+  "नमस्कार", // marathi
   "নমস্কার", //bengali
   "ನಮಸ್ಕಾರ", //kannda
-  "வணக்கம", //tamil
+  "வணக்கம்", //tamil
   "નમસ્તે", //gujju
   "ਸਤ ਸ੍ਰੀ ਅਕਾਲ", //punjabi
-  "ਸਤ ਸ੍ਰੀ ਅਕਾਲ", // marathi
+  "നമസ്കാരം", //malayalam
+  "నమస్కారం", // telugu
   "WELCOME !!",
 ];
 
@@ -31,7 +33,7 @@ export default function Preloader({ onFinish }) {
           setTimeout(() => {
             setIsVisible(false);
             onFinish();
-          }, 700); // 700ms to view the last word
+          }, 400); // 700ms to view the last word
 
           return prevIndex;
         }
@@ -55,7 +57,7 @@ export default function Preloader({ onFinish }) {
       >
         <motion.h1
           key={index}
-          className={`text-5xl font-bold ${caveat.className}`}
+          className={`text-5xl font-bold ${jetbrains.variable}`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}

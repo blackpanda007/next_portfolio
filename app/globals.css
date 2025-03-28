@@ -46,7 +46,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(20% 0 0 / 99.26%);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
@@ -119,7 +119,7 @@
     @apply border-border outline-ring/100;
   }
   body {
-    @apply bg-black text-foreground text-white;
+    @apply bg-white text-foreground;
   }
   .h1 {
     @apply text-[48px] lg:text-[80px] leading-[1.1] font-semibold;

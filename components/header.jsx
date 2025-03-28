@@ -5,21 +5,21 @@ import { Button } from "./ui/button";
 //components
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
-import { inter, caveat, vt, roboto_mono } from "@/components/fonts";
+import { inter, caveat, vt, roboto_mono, jetbrains } from "@/components/fonts";
 
 const Header = () => {
   return (
-    <header className="py-8 lg:py-10 text-white bg-[#FBA002]">
-      <div className="container mx-auto flex justify-between items-center">
+    <header className="py-8 text-white bg-black/60 backdrop-blur-sm fixed w-full top-0 left-0 right-0 z-50">
+      <div className="w-full px-4 flex justify-between">
         {/* logo here */}
         <Link href="/">
-          <h1 className={`${vt.className} text-4xl font-medium text-[#313B2F]`}>
-            Satyam<span className="text-green-300">.</span>
+          <h1 className={`${jetbrains.className} text-4xl pl-5 font-medium `}>
+            Satyam<span className="text-[#66FF00]">.</span>
           </h1>
         </Link>
 
         {/* desktop nav & hire me button */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8 pr-5">
           <Nav />
           <Link href="/contact">
             <Button className={undefined} variant="secondary" size={undefined}>

@@ -1,7 +1,13 @@
-import React from "react";
+import PageWrapper from "@/components/PageWrapper";
 
 const Work = () => {
-  return <div>work page</div>;
+  return (
+    <PageWrapper>
+      <div className="container mx-auto">
+        <div>work page</div>
+      </div>
+    </PageWrapper>
+  );
 };
 
 export default Work;

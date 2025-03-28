@@ -10,19 +10,19 @@ const Photo = () => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { delay: 2, duration: 0.4, ease: "easeIn" },
+          transition: { delay: 0, duration: 0.1, ease: "easeIn" },
         }}
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 2, duration: 0.4, ease: "easeIn" },
+            transition: { delay: 0, duration: 0.1, ease: "easeIn" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+          className="w-[298px] h-[398px] xl:w-[598px] xl:h-[698px] relative xl:absolute mx-auto my-auto"
         >
           <Image
-            src="/assets/panda.png"
+            src="/assets/openart-81e37f10-ec82-47bd-9f96-a3b784e3a9f3.png"
             priority
             quality={100}
             fill
@@ -33,12 +33,12 @@ const Photo = () => {
 
         {/* circle */}
         <motion.svg
-          className="w-[300px] xl:w-[560px] h-[300px] xl:h-[560px]"
+          className="w-[300px] xl:w-[560px] h-[300px] xl:h-[560px] hidden xl:block"
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="https://www.w3.org/2000/svg"
         >
-          <motion.circle
+          {/* <motion.circle
             cx="253"
             cy="253"
             r="250"
@@ -56,7 +56,7 @@ const Photo = () => {
               repeat: Infinity,
               repeatType: "reverse",
             }}
-          />
+          /> */}
         </motion.svg>
       </motion.div>
     </div>

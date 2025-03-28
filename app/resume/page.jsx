@@ -1,7 +1,13 @@
-import React from "react";
+import PageWrapper from "@/components/PageWrapper";
 
 const Resume = () => {
-  return <div>resume page</div>;
+  return (
+    <PageWrapper>
+      <div className="container mx-auto">
+        <div>resume page</div>
+      </div>
+    </PageWrapper>
+  );
 };
 
 export default Resume;

@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import PreloaderWrapper from "@/components/PreloaderWrapper";
+import Background from "@/components/Background";
 import { inter, caveat, vt, roboto_mono } from "@/components/fonts";
 import { ViewTransitions } from "next-view-transitions";
 
@@ -15,25 +16,25 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <PreloaderWrapper>
-          <ViewTransitions>
-            <PageTransition>
-              <Header />
-              {/* <StairTransition /> */}
+    <ViewTransitions>
+      <html lang="en">
+        <body>
+          <PreloaderWrapper>
+            {/* <PageTransition> */}
+            {/* <Header /> */}
+            {/* <StairTransition /> */}
+            <Background />
+            <div className="flex flex-col min-h-screen ">{children}</div>
 
-              <div className="flex flex-col min-h-screen ">{children}</div>
-
-              <footer className=" py-8 bg-[#313B2F]">
-                <div className="container mx-auto px-4 text-center text-red-600">
-                  <p>Made with ❤️ by BlackPanda</p>
-                </div>
-              </footer>
-            </PageTransition>
-          </ViewTransitions>
-        </PreloaderWrapper>
-      </body>
-    </html>
+            <footer className=" py-8">
+              <div className="container mx-auto px-4 text-center text-green-500">
+                <p>Made with ❤️ by BlackPanda</p>
+              </div>
+            </footer>
+            {/* </PageTransition> */}
+          </PreloaderWrapper>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
