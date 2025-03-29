@@ -22,7 +22,7 @@ const Photo = () => {
           className="w-[298px] h-[398px] xl:w-[598px] xl:h-[698px] relative xl:absolute mx-auto my-auto"
         >
           <Image
-            src="/assets/openart-81e37f10-ec82-47bd-9f96-a3b784e3a9f3.png"
+            src="/assets/samurai_panda.PNG"
             priority
             quality={100}
             fill

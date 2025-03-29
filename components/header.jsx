@@ -9,7 +9,7 @@ import { inter, caveat, vt, roboto_mono, jetbrains } from "@/components/fonts";
 
 const Header = () => {
   return (
-    <header className="py-8 text-white bg-black/60 backdrop-blur-sm fixed w-full top-0 left-0 right-0 z-50">
+    <header className="py-8 text-white bg-black/60 backdrop-blur-sm blu fixed w-full top-0 left-0 right-0 z-50">
       <div className="w-full px-4 flex justify-between">
         {/* logo here */}
         <Link href="/">

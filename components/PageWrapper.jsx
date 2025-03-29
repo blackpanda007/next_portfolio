@@ -7,7 +7,7 @@ const PageWrapper = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="pt-8 min-h-screen">{children}</main>
+      <main className="pt-30 min-h-screen">{children}</main>
     </>
   );
 };

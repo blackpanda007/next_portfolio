@@ -48,7 +48,7 @@ const Nav = () => {
             key={index}
             className={`${
               link.path === pathname &&
-              "text-[#42a32f] border-b-2 border-[#313B2F]"
+              "text-green-500 border-b-2 border-[#313B2F]"
             } capitalize font-medium hover:text-[#70a765] transition-all`}
           >
             {link.name}
@@ -74,7 +74,7 @@ const pageAnimation = () => {
       },
     ],
     {
-      duration: 1000,
+      duration: 1300,
       easing: "cubic-bezier(0.76, 0, 0.24, 1)",
       fill: "forwards",
       pseudoElement: "::view-transition-old(root)",
