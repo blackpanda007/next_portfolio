@@ -10,14 +10,12 @@ const Photo = () => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { delay: 0, duration: 0.1, ease: "easeIn" },
         }}
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 0, duration: 0.1, ease: "easeIn" },
           }}
           className="w-[298px] h-[398px] xl:w-[598px] xl:h-[698px] relative xl:absolute mx-auto my-auto"
         >

@@ -13,7 +13,7 @@ const Home = () => {
     <PageWrapper>
       <section className="h-full">
         <div className="container mx-auto h-full">
-          <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-2 xl:pb-24 pl-8">
+          <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-2 xl:pb-24 pl-0">
             {/* text */}
             <div
               className={`${jetbrains.className} text-black xl:text-white text-center xl:text-left order-2 xl:order-none`}
