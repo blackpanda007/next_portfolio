@@ -22,9 +22,7 @@ const Header = () => {
         <div className="hidden lg:flex items-center gap-8 pr-5">
           <Nav />
           <Link href="/contact">
-            <Button className={undefined} variant="secondary" size={undefined}>
-              HIRE ME
-            </Button>
+            <Button variant="secondary">HIRE ME</Button>
           </Link>
         </div>
 
