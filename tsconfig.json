@@ -29,7 +29,8 @@
     "**/*.ts",
     "**/*.tsx",
     "components/header.jsx",
-    "app/projects"
+    "app/projects",
+    "app/contact/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

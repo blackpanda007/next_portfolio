@@ -33,14 +33,14 @@ export default function Preloader({ onFinish }) {
           setTimeout(() => {
             setIsVisible(false);
             onFinish();
-          }, 400); // 700ms to view the last word
+          }, 300); // 700ms to view the last word
 
           return prevIndex;
         }
         // Otherwise move to the next word
         return prevIndex + 1;
       });
-    }, 300); // Controls how quickly words change (500ms)
+    }, 150); // Controls how quickly words change (500ms)
 
     // Cleanup function
     return () => clearInterval(interval);
