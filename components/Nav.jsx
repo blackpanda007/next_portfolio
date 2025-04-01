@@ -29,18 +29,46 @@ const links = [
 const Nav = () => {
   const router = useTransitionRouter();
   const pathname = usePathname();
+  const [isClient, setIsClient] = React.useState(false);
+  const [visitedPages, setVisitedPages] = React.useState(new Set([pathname]));
+
+  React.useEffect(() => {
+    setIsClient(true);
+
+    // Prefetch all pages
+    links.forEach((link) => {
+      router.prefetch(link.path);
+    });
+  }, []);
+
+  // Track visited pages
+  React.useEffect(() => {
+    setVisitedPages((prev) => new Set([...prev, pathname]));
+  }, [pathname]);
+
+  const handleNavigation = (e, path) => {
+    if (!isClient) return;
+    e.preventDefault();
+
+    const isFirstVisit = !visitedPages.has(path);
+    router.push(path, {
+      onTransitionReady: () => pageAnimation(isFirstVisit),
+    });
+  };
+
   return (
     <nav className="flex gap-8">
       {links.map((link, index) => {
+        // Prefetch on hover for better performance
+        const handleMouseEnter = () => {
+          router.prefetch(link.path);
+        };
+
         return (
           <Link
             href={link.path}
-            onClick={(e) => {
-              e.preventDefault();
-              router.push(link.path, {
-                onTransitionReady: pageAnimation,
-              });
-            }}
+            onClick={(e) => handleNavigation(e, link.path)}
+            onMouseEnter={handleMouseEnter}
             key={index}
             className={`${
               link.path === pathname &&
@@ -55,7 +83,12 @@ const Nav = () => {
   );
 };
 
-const pageAnimation = () => {
+const pageAnimation = (isFirstVisit) => {
+  if (typeof window === "undefined") return;
+
+  const duration = isFirstVisit ? 800 : 1300; // Faster initial animation for first visits
+
+  // Start the exit animation
   document.documentElement.animate(
     [
       {
@@ -70,13 +103,14 @@ const pageAnimation = () => {
       },
     ],
     {
-      duration: 1300,
+      duration: isFirstVisit ? duration : 1300,
       easing: "cubic-bezier(0.76, 0, 0.24, 1)",
       fill: "forwards",
       pseudoElement: "::view-transition-old(root)",
     }
   );
 
+  // Start the enter animation
   document.documentElement.animate(
     [
       {
@@ -87,7 +121,7 @@ const pageAnimation = () => {
       },
     ],
     {
-      duration: 1000,
+      duration: isFirstVisit ? duration : 1000,
       background: "#000000",
       easing: "cubic-bezier(0.76, 0, 0.24, 1)",
       fill: "forwards",

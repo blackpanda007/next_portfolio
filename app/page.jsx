@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
@@ -9,6 +11,15 @@ import PageWrapper from "@/components/PageWrapper";
 import { jetbrains } from "@/components/fonts";
 
 const Home = () => {
+  const handleDownload = () => {
+    const downloadLink = document.createElement("a");
+    downloadLink.href = "/resume.pdf";
+    downloadLink.download = "Satyam_Resume.pdf";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
+
   return (
     <PageWrapper>
       <section className="h-full">
@@ -37,14 +48,15 @@ const Home = () => {
                   variant="outline"
                   size="lg"
                   className="uppercase flex items-center gap-2 text-white"
+                  onClick={handleDownload}
                 >
                   <span className="font-extrabold">Download CV</span>
                   <FiDownload className="text-xl" />
                 </Button>
                 <div className="mb-8 xl:mb-0">
                   <Socials
-                    containerStyles="flex gap-6"
-                    iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                    containerStyles="flex gap-6 "
+                    iconStyles="w-15 h-15 border border-accent rounded-full flex justify-center items-center text-2xl hover:bg-accent hover:text-primary transition-all duration-500"
                   />
                 </div>
               </div>

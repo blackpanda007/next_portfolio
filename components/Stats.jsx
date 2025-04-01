@@ -5,12 +5,12 @@ import { caveat, inter, jetbrains, vt } from "./fonts";
 
 const stats = [
   {
-    num: 26,
-    text: "Pojects Completed",
+    num: 10,
+    text: "Repositories",
   },
   {
     num: 8,
-    text: "Technologies Mastered",
+    text: "Frameworks",
   },
   {
     num: 4,

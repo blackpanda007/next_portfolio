@@ -25,34 +25,77 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    catagory: "xyz",
-    title: "project 1",
+    catagory: "Machine Learning",
+    title: "Detection of Brain tumor",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius impedit explicabo facere hic, sapiente ut velit labore cumque repellendus rerum atque adipisci ex soluta iure sit ipsa nam! Veniam, beatae.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
+      "I developed and implemented deep learning models (CNN, ResNet, VGG16) for brain tumor detection from MRI scans, achieving an 80.73% accuracy with the CNN model. I preprocessed and analyzed over 2,000 MRI scans using image augmentation techniques (e.g., average and Laplacian filters), enhancing feature extraction and model robustness. Additionally, I evaluated the AI models based on accuracy, sensitivity, and specificity, optimizing early tumor diagnosis to potentially improve clinical decision-making in neuro-oncology.",
+    stack: [
+      { name: "Python" },
+      { name: "PyTorch" },
+      { name: "NumPy" },
+      { name: "Pandas" },
+      { name: "matplotlib" },
+    ],
+    image: "/assets/work/thumb1.jpg",
+    live: "https://github.com/blackpanda007/Detection-of-Brain-tumor",
+    github: "https://github.com/blackpanda007/Detection-of-Brain-tumor",
   },
   {
     num: "02",
-    catagory: "xyz",
-    title: "project 2",
+    catagory: "Big Data Processing",
+    title: "Ethereum Data Analysis",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius impedit explicabo facere hic, sapiente ut velit labore cumque repellendus rerum atque adipisci ex soluta iure sit ipsa nam! Veniam, beatae.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb2.png",
+      "I implemented Big Data processing techniques with Apache Spark to analyze Ethereum transactions and smart contracts, achieving a 40% reduction in data processing time. Using Matplotlib, I developed data-driven visualizations to track transaction trends, scam activities, and gas price fluctuations, enhancing insights into blockchain behaviors. Additionally, I performed advanced data joins and aggregations to identify the top 10 smart contracts and active miners, leveraging Spark's reduceByKey and takeOrdered methods for optimized analysis.",
+    stack: [
+      { name: "Python" },
+      { name: "PyTorch" },
+      { name: "NumPy" },
+      { name: "Pandas" },
+      { name: "matplotlib" },
+    ],
+    image: "/assets/work/thumb2.jpg",
     live: "",
     github: "",
   },
   {
     num: "03",
-    catagory: "xyz",
-    title: "project 3",
+    catagory: "Machine Learning",
+    title: "Sound Analysis using ML model",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius impedit explicabo facere hic, sapiente ut velit labore cumque repellendus rerum atque adipisci ex soluta iure sit ipsa nam! Veniam, beatae.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb3.png",
+      "I developed an SVM-based machine learning pipeline to classify audio segments from London, achieving 57.48% accuracy by extracting over 45 audio features like MFCCs and spectral features using Librosa.Using Python, scipy, numpy, and scikit-learn, I optimized the model with cross-validation and hyperparameter tuning, addressing data imbalance for improved generalization.Model performance was visualized and assessed with matplotlib, seaborn, confusion matrices, and key metrics, ensuring robust results.",
+    stack: [
+      { name: "Python" },
+      { name: "PyTorch" },
+      { name: "NumPy" },
+      { name: "Pandas" },
+      { name: "matplotlib" },
+      { name: "scikit-learn" },
+      { name: "librosa" },
+      { name: "scipy" },
+      { name: "seaborn" },
+    ],
+    image: "/assets/work/thumb3.jpg",
+    live: "",
+    github: "",
+  },
+  {
+    num: "04",
+    catagory: "Network Analysis and Visualization",
+    title: "Analyze the spread of memes on social media",
+    description:
+      "I developed an SVM-based machine learning pipeline to classify audio segments from London, achieving 57.48% accuracy by extracting over 45 audio features like MFCCs and spectral features using Librosa.Using Python, scipy, numpy, and scikit-learn, I optimized the model with cross-validation and hyperparameter tuning, addressing data imbalance for improved generalization.Model performance was visualized and assessed with matplotlib, seaborn, confusion matrices, and key metrics, ensuring robust results.",
+    stack: [
+      { name: "Python" },
+      { name: "PyTorch" },
+      { name: "NumPy" },
+      { name: "Pandas" },
+      { name: "matplotlib" },
+      { name: "scikit-learn" },
+      { name: "librosa" },
+      { name: "scipy" },
+      { name: "seaborn" },
+    ],
+    image: "/assets/work/thumb4.jpg",
     live: "",
     github: "",
   },
@@ -76,23 +119,23 @@ const Projects = () => {
       >
         <div className="container mx-auto">
           <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-            <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-              <div className="flex flex-col gap-2 h-[100%] p-5 rounded-xl bg-black/80">
+            <div className="w-full xl:w-[50%] flex flex-col xl:justify-between order-2 xl:order-none">
+              <div className="flex flex-col gap-2 p-5 rounded-xl bg-black/80">
                 {/* outline number */}
                 <div className="text-8xl font-extrabold text-transparent text-outline">
                   {project.num}
                 </div>
                 {/* project catagory */}
                 <h2 className="text-[42px] font-bold leading-loose text-white group-hover:text-accent transition-all duration-500 capitalize">
-                  {project.catagory} project
+                  {project.title}
                 </h2>
                 {/* project description */}
                 <p className="text-white">{project.description}</p>
                 {/* stack */}
-                <ul className="flex gap-4">
+                <ul className="flex flex-wrap gap-4">
                   {project.stack.map((item, index) => {
                     return (
-                      <li key={index} className="text-xl text-green-300">
+                      <li key={index} className="text-lg text-green-300">
                         {item.name}
                         {/* remove the last comma */}
                         {index !== project.stack.length - 1 && ","}
@@ -105,7 +148,11 @@ const Projects = () => {
                 {/* button */}
                 <div className="flex items-center gap-4">
                   {/* live project button */}
-                  <Link href={project.github}>
+                  <Link
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -118,7 +165,11 @@ const Projects = () => {
                     </TooltipProvider>
                   </Link>
                   {/* github project button */}
-                  <Link href={project.live}>
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
