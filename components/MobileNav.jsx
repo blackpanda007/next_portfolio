@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {} from "react-icons/ci";
 import { CiMenuFries } from "react-icons/ci";
+import { jetbrains } from "./fonts";
 
 const links = [
   {
@@ -43,7 +44,11 @@ const MobileNav = () => {
         {/* logo */}
         <div className="mt-20 mb-20 text-center text-2xl">
           <Link href="/">
-            <h1 className="text-4xl text-white font-semibold">
+            <h1
+              className={`text-4xl text-white font-semibold ${
+                pathname === "/" ? "text-green-500" : "text-white"
+              } ${jetbrains.className}`}
+            >
               Satyam<span className="text-green-300">.</span>
             </h1>
           </Link>

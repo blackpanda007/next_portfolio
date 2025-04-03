@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/form";
 
 import { formSchema } from "lib/schemas";
-import { send } from "@/lib/email";
 
 const info = [
   {
@@ -56,12 +55,27 @@ const Contact = () => {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      await send(values);
+      console.log("Sending form data:", values);
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Error response:", errorData);
+        throw new Error(errorData.error || "Failed to send message");
+      }
+
       toast.success("Message sent successfully!", {
-        duration: 3000,
+        duration: 1500,
       });
       form.reset();
     } catch (error) {
+      console.error("Error:", error);
       toast.error("Failed to send message. Please try again.");
     }
   }

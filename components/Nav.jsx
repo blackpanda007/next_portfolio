@@ -86,7 +86,7 @@ const Nav = () => {
 const pageAnimation = (isFirstVisit) => {
   if (typeof window === "undefined") return;
 
-  const duration = isFirstVisit ? 800 : 1300; // Faster initial animation for first visits
+  const duration = isFirstVisit ? 300 : 400; // Reduced durations
 
   // Start the exit animation
   document.documentElement.animate(
