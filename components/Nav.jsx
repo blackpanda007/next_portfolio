@@ -71,8 +71,9 @@ const Nav = () => {
             onMouseEnter={handleMouseEnter}
             key={index}
             className={`${
-              link.path === pathname &&
-              "text-green-500 border-b-2 border-[#313B2F]"
+              link.path === pathname
+                ? "text-green-500 border-b-2 border-[#313B2F] pointer-events-none"
+                : ""
             } capitalize font-medium hover:text-[#70a765] transition-all`}
           >
             {link.name}

@@ -8,6 +8,8 @@ import PreloaderWrapper from "@/components/PreloaderWrapper";
 import Background from "@/components/Background";
 import { inter, caveat, vt, roboto_mono } from "@/components/fonts";
 import { ViewTransitions } from "next-view-transitions";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Satyam's Portfolio",
@@ -20,6 +22,8 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body>
           <PreloaderWrapper>
+            <Analytics />
+            <SpeedInsights />
             {/* <PageTransition> */}
             {/* <Header /> */}
             {/* <StairTransition /> */}

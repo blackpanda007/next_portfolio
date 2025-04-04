@@ -62,7 +62,7 @@ const MobileNav = () => {
                 key={index}
                 className={`${
                   link.path === pathname
-                    ? "text-green-500 border-b-2 border-[#313B2F]"
+                    ? "text-green-500 border-b-2 border-[#313B2F] pointer-events-none"
                     : "text-white"
                 } capitalize font-medium hover:text-[#70a765] transition-all`}
               >
