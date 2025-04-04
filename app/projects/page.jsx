@@ -37,7 +37,7 @@ const projects = [
       { name: "matplotlib" },
     ],
     image: "/assets/work/thumb1.jpg",
-    live: "https://github.com/blackpanda007/Detection-of-Brain-tumor",
+
     github: "https://github.com/blackpanda007/Detection-of-Brain-tumor",
   },
   {
@@ -54,8 +54,8 @@ const projects = [
       { name: "matplotlib" },
     ],
     image: "/assets/work/thumb2.jpg",
-    live: "",
-    github: "",
+
+    github: "https://github.com/blackpanda007/Ethereum-Data-Analysis",
   },
   {
     num: "03",
@@ -75,8 +75,7 @@ const projects = [
       { name: "seaborn" },
     ],
     image: "/assets/work/thumb3.jpg",
-    live: "",
-    github: "",
+    github: "https://github.com/blackpanda007/Sound-Analysis-using-ML-model",
   },
   {
     num: "04",
@@ -96,8 +95,7 @@ const projects = [
       { name: "seaborn" },
     ],
     image: "/assets/work/thumb4.jpg",
-    live: "",
-    github: "",
+    github: "https://github.com/blackpanda007",
   },
 ];
 
@@ -150,7 +148,7 @@ const Projects = () => {
                 {/* button */}
                 <div className="flex items-center gap-4">
                   {/* live project button */}
-                  <Link
+                  {/* <Link
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -165,7 +163,7 @@ const Projects = () => {
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
-                  </Link>
+                  </Link> */}
                   {/* github project button */}
                   <Link
                     href={project.github}
