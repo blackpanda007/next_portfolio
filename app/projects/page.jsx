@@ -81,7 +81,7 @@ const projects = [
   {
     num: "04",
     catagory: "Network Analysis and Visualization",
-    title: "Analyze the spread of memes on social media",
+    title: "Analyze the spread of memes on Reddit",
     description:
       "I developed an SVM-based machine learning pipeline to classify audio segments from London, achieving 57.48% accuracy by extracting over 45 audio features like MFCCs and spectral features using Librosa.Using Python, scipy, numpy, and scikit-learn, I optimized the model with cross-validation and hyperparameter tuning, addressing data imbalance for improved generalization.Model performance was visualized and assessed with matplotlib, seaborn, confusion matrices, and key metrics, ensuring robust results.",
     stack: [
@@ -106,7 +106,7 @@ const Projects = () => {
 
   const handleSlideChange = (swiper) => {
     //get current slide index
-    const currenIndex = swiper.activeIndex;
+    const currenIndex = swiper.realIndex;
     //update project state based on current slide index
     setProject(projects[currenIndex]);
   };
@@ -125,10 +125,12 @@ const Projects = () => {
                 <div className="text-8xl font-extrabold text-transparent text-outline">
                   {project.num}
                 </div>
-                {/* project catagory */}
-                <h2 className="text-[42px] font-bold leading-loose text-white group-hover:text-accent transition-all duration-500 capitalize">
+                {/* project title */}
+                <h3 className="text-3xl font-bold leading-loose text-white group-hover:text-accent transition-all duration-500 capitalize">
                   {project.title}
-                </h2>
+                </h3>
+                {/* project catagory */}
+                <p className="text-white italic">{project.catagory}</p>
                 {/* project description */}
                 <p className="text-white">{project.description}</p>
                 {/* stack */}
@@ -190,19 +192,20 @@ const Projects = () => {
                 slidesPerView={1}
                 className="xl:h-[520px] mb-12"
                 onSlideChange={handleSlideChange}
+                loop={true}
               >
                 {projects.map((project, index) => {
                   return (
                     <SwiperSlide key={index} className="w-full">
-                      <div className="h-[460px] relative group flex justify-center items-center bg-amber-200">
+                      <div className="h-[460px] relative group flex justify-center items-center rounded-xl bg-amber-200">
                         {/* overlay */}
-                        <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                        <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-xl"></div>
                         {/* image */}
                         <div className="relative w-full h-full">
                           <Image
                             src={project.image}
                             fill
-                            className="object-cover"
+                            className="object-cover rounded-xl"
                             alt="project thumbnail"
                           />
                         </div>
@@ -213,7 +216,7 @@ const Projects = () => {
                 {/* slider buttons */}
                 <WorkSliderBtns
                   containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                  btnStyles="bg-green-300 hover:bg-green-200 text-black text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                  btnStyles="bg-green-300 hover:bg-green-200 text-black text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all "
                 />
               </Swiper>
             </div>

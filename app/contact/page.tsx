@@ -28,7 +28,7 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    description: "+91-9664482286",
+    description: <a href="tel:+919664482286">+91-9664482286</a>,
   },
   {
     icon: <FaEnvelope />,
@@ -145,7 +145,7 @@ const Contact = () => {
                             Email
                           </FormLabel>
                           <FormControl>
-                            <Input placeholder="Your Email" {...field} />
+                            <Input placeholder="Your email" {...field} />
                           </FormControl>
                           <FormMessage className="" />
                         </FormItem>

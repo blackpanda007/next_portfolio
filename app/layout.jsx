@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
             {/* <Header /> */}
             {/* <StairTransition /> */}
             <Background />
-            <div className="flex flex-col min-h-screen ">{children}</div>
+            <div className="flex flex-col min-h-screen px-3">{children}</div>
 
             <footer className=" py-8">
               <div className="container mx-auto px-4 text-center text-green-500">

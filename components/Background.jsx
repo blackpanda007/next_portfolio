@@ -25,7 +25,13 @@ const Background = () => {
           muted
           loop
           playsInline
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full transform-gpu"
+          style={{
+            transform: "translateZ(0)",
+            backfaceVisibility: "hidden",
+            perspective: "1000px",
+            willChange: "transform",
+          }}
         />
       </div>
 

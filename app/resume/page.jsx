@@ -1,6 +1,7 @@
 "use client";
 
 import PageWrapper from "@/components/PageWrapper";
+import { useState } from "react";
 
 import {
   FaHtml5,
@@ -34,7 +35,7 @@ const about = {
     },
     {
       fieldName: "Phone",
-      fieldValue: "+91-966-4482286",
+      fieldValue: <a href="tel:+919664482286">+91-9664482286</a>,
     },
     {
       fieldName: "Github",
@@ -77,7 +78,6 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
-  description: "",
   items: [
     {
       institution: "Queen Mary University of London",
@@ -94,7 +94,6 @@ const education = {
 
 const skills = {
   title: "My skills",
-  description: "",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -284,17 +283,26 @@ const Resume = () => {
                     <h3 className="text-4xl text-black/80 font-bold px-3 ">
                       {skills.title}
                     </h3>
-                    <p className="max-w-[600px] text-black/80 font-bold px-3 pb-3 mx-auto xl:mx-0">
-                      {skills.description}
-                    </p>
                   </div>
                   <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 p-3 gap-4 xl:gap-[30px]">
                     {skills.skillList.map((skill, index) => {
+                      const [isTooltipVisible, setTooltipVisible] =
+                        useState(false);
                       return (
                         <li key={index}>
                           <TooltipProvider delayDuration={100}>
-                            <Tooltip>
-                              <TooltipTrigger className="w-full h-[150px] bg-black/80 rounded-xl flex justify-center items-center group">
+                            <Tooltip
+                              open={isTooltipVisible}
+                              onOpenChange={setTooltipVisible}
+                            >
+                              <TooltipTrigger
+                                className="w-full h-[150px] bg-black/80 rounded-xl flex justify-center items-center group"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  setTooltipVisible(!isTooltipVisible);
+                                }}
+                              >
                                 <div className="text-6xl group-hover:text-green-500 transition-all duration-300">
                                   {skill.icon}
                                 </div>
@@ -319,20 +327,19 @@ const Resume = () => {
                   <h3 className="text-4xl text-black/80 font-bold px-3 ">
                     {about.title}
                   </h3>
-                  <p className="max-w-[600px] text-black/80 font-bold px-3 pb-3 mx-auto xl:mx-0">
-                    {about.description}
-                  </p>
-                  <ul className="grid grid-cols-1 max-w-fit gap-6 p-3 mx-auto xl:grid-cols-2 xl:mx-0">
+                  <ul className="grid grid-cols-1 max-w-fit gap-6 p-3 mx-auto bg-black/80 xl:grid-cols-2 xl:mx-0">
                     {about.info.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="flex items-center justify-center xl:justify-start gap-4 px-2 min-w-[300px]  max-w-[400px] bg-black/80 rounded-md"
+                          className="flex-row items-center justify-center xl:justify-start gap-4 px-2 min-w-[300px]  max-w-[400px] pl-1.5 rounded-md"
                         >
                           <span className="text-green-400">
                             {item.fieldName}
                           </span>
-                          <span className="text-xl">{item.fieldValue}</span>
+                          <span className="text-xl pl-5">
+                            {item.fieldValue}
+                          </span>
                         </li>
                       );
                     })}

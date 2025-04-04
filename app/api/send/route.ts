@@ -15,9 +15,9 @@ export async function POST(request: Request) {
     console.log("Parsed form data:", emailFormData); // Debug log
 
     const { data, error } = await resend.emails.send({
-      from: `Acme <${process.env.RESEND_FROM_EMAIL}>`,
-      to: [emailFormData.email],
-      subject: "Welcome",
+      from: `Portfolio <${process.env.RESEND_FROM_EMAIL}>`,
+      to: process.env.RESEND_TO_EMAIL,
+      subject: "New Message from Portfolio",
       react: await EmailTemplate({
         firstname: emailFormData.firstname,
         lastname: emailFormData.lastname,
