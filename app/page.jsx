@@ -29,18 +29,31 @@ const Home = () => {
             <div
               className={`${jetbrains.className} text-black xl:text-white text-center xl:text-left order-2 xl:order-none`}
             >
-              <span className="text-xl bg-gradient-to-b font-extrabold">
+              <span className="text-xl bg-gradient-to-b from-green-500 to-green-200 pb-3 text-transparent bg-clip-text font-extrabold">
                 Data Scientist | FrontEnd Developer
               </span>
-              <h1 className="h1 mb-6 ">
+              <h1 className="h2 mb-6 mt-2">
                 Hello I'm <br />
-                <span className="text-green-500 [text-shadow:_10px_3px_8px_#000000]">
+                <span className="h1 text-green-500 [text-shadow:_10px_3px_8px_#000000]">
                   SATYAM KUMAR
                 </span>
               </h1>
               <p className="max-w-[500px] mb-9 ">
-                I excel in Data driven insights and I am a React developer too
-                being proficient in various programming languges and frameworks.
+                Big Data Science graduate skilled in building data-driven,
+                user-focused applications. I blend frontend development
+                <strong className="text-green-500">
+                  {" "}
+                  (Next.js, Tailwind)
+                </strong>{" "}
+                with machine learning and big data tools{" "}
+                <strong className="text-green-500"> (Spark, Hadoop) </strong> to
+                create smart, scalable solutions. From detecting brain tumors
+                with deep learning to analyzing Ethereum transactions and meme
+                trends, I love solving real-world problems through code and
+                design.
+              </p>
+              <p className="font-bold bg-gradient-to-b from-green-500 to-green-200 pb-3 text-transparent bg-clip-text">
+                Based in India | Remote-friendly
               </p>
               {/* download button and socials */}
               <div className="flex flex-col xl:flex-row  items-center gap-8">

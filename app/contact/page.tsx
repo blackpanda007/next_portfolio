@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { toast, Toaster } from "sonner";
+import { useState } from "react";
 
 import {
   Form,
@@ -53,7 +54,10 @@ const Contact = () => {
     },
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
     try {
       console.log("Sending form data:", values);
       const response = await fetch("/api/send", {
@@ -77,6 +81,8 @@ const Contact = () => {
     } catch (error) {
       console.error("Error:", error);
       toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -179,8 +185,9 @@ const Contact = () => {
                     className="ml-auto font-extrabold"
                     variant="secondary"
                     size="default"
+                    disabled={isSubmitting}
                   >
-                    Submit
+                    {isSubmitting ? "Sending..." : "Submit"}
                   </Button>
                 </form>
               </Form>

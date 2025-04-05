@@ -172,7 +172,7 @@ const Projects = () => {
                   >
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
-                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center cursor-pointer items-center group">
                           <BsGithub className="text-white text-3xl group-hover:text-green-300" />
                         </TooltipTrigger>
                         <TooltipContent>
@@ -214,7 +214,7 @@ const Projects = () => {
                 {/* slider buttons */}
                 <WorkSliderBtns
                   containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                  btnStyles="bg-green-300 hover:bg-green-200 text-black text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all "
+                  btnStyles="bg-green-300 hover:bg-green-200 cursor-pointer text-black text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all "
                 />
               </Swiper>
             </div>

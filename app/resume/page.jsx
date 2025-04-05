@@ -25,7 +25,7 @@ import {
 } from "react-icons/si";
 
 const about = {
-  title: "About me",
+  title: "About Me",
   description:
     "I am an MSc Big Data Science graduate with expertise in Frontend Development using Next.js and Tailwind, along with strong skills in Data Visualization (Tableau, PowerBI) and Machine Learning. I have experience working with Big Data tools like Apache Spark and Hadoop and have developed various data-driven projects, including brain tumor detection, Ethereum transaction analysis, and meme spread analysis. As a freelancer, I have designed web overlays and chat services, achieving high client satisfaction. My research contributions include studies on brain tumor detection and IoT-based EV charging stations.",
   info: [
@@ -97,15 +97,15 @@ const skills = {
   skillList: [
     {
       icon: <FaHtml5 />,
-      name: "html 5",
+      name: "html5",
     },
     {
       icon: <FaCss3 />,
-      name: "css 3",
+      name: "css3",
     },
     {
       icon: <FaJs />,
-      name: "javascript",
+      name: "javaScript",
     },
     {
       icon: <FaReact />,
@@ -121,7 +121,7 @@ const skills = {
     },
     {
       icon: <SiTypescript />,
-      name: "Typescript",
+      name: "TypeScript",
     },
     {
       icon: <SiTailwindcss />,
@@ -188,7 +188,7 @@ const Resume = () => {
         <div className="container mx-auto">
           <Tabs
             defaultValue="experience"
-            className="flex flex-col xl:flex-row lg:px-3 gap-[60px]"
+            className="flex flex-col xl:flex-row lg:px-3 gap-[50px]"
           >
             <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
               <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -199,11 +199,11 @@ const Resume = () => {
 
             {/* content */}
             <div className="min-h-[70vh] w-full">
-              {/* experience */}
               <TabsContent
                 value="experience"
                 className={`${jetbrains.className} w-full`}
               >
+                {/* experience */}
                 <div className="flex flex-col gap-[40px] text-center h-fit xl:text-left backdrop-blur-sm rounded-xl">
                   <h3 className="text-4xl text-black/80 font-bold px-3 ">
                     {experience.title}
@@ -246,7 +246,9 @@ const Resume = () => {
                   <h3 className="text-4xl text-black/80 font-bold px-3 ">
                     {education.title}
                   </h3>
-
+                  <p className="max-w-[600px] font-bold px-3 pb-3 mx-auto xl:mx-0">
+                    {education.description}
+                  </p>
                   <ScrollArea>
                     <ul className="grid grid-cols-1 lg:grid-cols-2 p-3 gap-[30px]">
                       {education.items.map((item, index) => {
@@ -276,15 +278,13 @@ const Resume = () => {
               {/* skills */}
               <TabsContent
                 value="skills"
-                className={`${jetbrains.className} w-full h-full`}
+                className={`${jetbrains.className} w-full`}
               >
-                <div className="flex flex-col gap-[30px] text-center h-fit xl:text-left backdrop-blur-sm rounded-xl">
-                  <div>
-                    <h3 className="text-4xl text-black/80 font-bold px-3 ">
-                      {skills.title}
-                    </h3>
-                  </div>
-                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 p-3 gap-4 xl:gap-[30px]">
+                <div className="flex flex-col gap-[40px] text-center h-fit xl:text-left backdrop-blur-sm rounded-xl">
+                  <h3 className="text-4xl text-black/80 font-bold px-3 ">
+                    {skills.title}
+                  </h3>
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 pl-3 pb-3 gap-4 ">
                     {skills.skillList.map((skill, index) => {
                       const [isTooltipVisible, setTooltipVisible] =
                         useState(false);
@@ -296,7 +296,7 @@ const Resume = () => {
                               onOpenChange={setTooltipVisible}
                             >
                               <TooltipTrigger
-                                className="w-full h-[150px] bg-black/80 rounded-xl flex justify-center items-center group"
+                                className="w-[180px] h-[110px] bg-black/80 rounded-xl flex justify-center items-center group"
                                 onClick={(e) => {
                                   e.preventDefault();
                                   e.stopPropagation();
@@ -327,12 +327,13 @@ const Resume = () => {
                   <h3 className="text-4xl text-black/80 font-bold px-3 ">
                     {about.title}
                   </h3>
-                  <ul className="grid grid-cols-1 max-w-fit gap-6 p-3 mx-auto bg-black/80 xl:grid-cols-2 xl:mx-0">
+                  <p className="text-black/80 font-bold px-3"></p>
+                  <ul className="grid grid-cols-1 max-w-fit gap-6 p-3 mx-auto  xl:grid-cols-2 xl:mx-0">
                     {about.info.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="flex-row items-center justify-center xl:justify-start gap-4 px-2 min-w-[300px]  max-w-[400px] pl-1.5 rounded-md"
+                          className="flex-row items-center justify-center xl:justify-start gap-4 px-2 min-w-[300px]  max-w-[400px] pl-1.5 rounded-md bg-black/80"
                         >
                           <span className="text-green-400">
                             {item.fieldName}
